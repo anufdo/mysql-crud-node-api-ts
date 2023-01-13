@@ -22,6 +22,9 @@ dist/
 # Optional npm cache directory
 .npm
 
+# yarn log
+yarn-error.log
+
 # Optional eslint cache
 .eslintcache
 
