@@ -1,9 +1,12 @@
+import cors from "cors";
 import express, { Request, Response } from "express";
+import { appEnv } from "./config/env";
 
-const PORT = 3000;
+const PORT = appEnv.general.PORT || 3000;
 
 const app: express.Application = express();
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req: Request, res: Response): Promise<Response> => {
@@ -12,6 +15,7 @@ app.get("/", async (req: Request, res: Response): Promise<Response> => {
   });
 });
 
+// test response - should be deleted.
 app.get("/name", async (req: Request, res: Response): Promise<Response> => {
   return res.send("hi");
 });
