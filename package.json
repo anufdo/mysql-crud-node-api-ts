@@ -2,9 +2,9 @@
   "name": "crud-node-api-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "tsc && node dist/index.js",
     "build": "tsc -p .",
     "tsc": "tsc -p . --pretty --skipLibCheck --noEmit",
     "bootstrap": "git pull origin main && yarn install",
