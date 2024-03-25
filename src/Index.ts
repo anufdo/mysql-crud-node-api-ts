@@ -1,5 +1,5 @@
 import * as http from "http";
-import app from "./app";
+import app from "./App";
 import { appEnv } from "./config/env";
 
 const server = http.createServer(app);
