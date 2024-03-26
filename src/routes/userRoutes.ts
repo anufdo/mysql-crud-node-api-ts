@@ -4,6 +4,7 @@ import express, { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/User";
+
 // Assuming your User model is exported as User from the models directory
 
 const router = express.Router();
@@ -16,7 +17,9 @@ router.get("/test", (req: Request, res: Response) => {
 router.post("/register", async (req: Request, res: Response) => {
   try {
     const { username, password } = req.body;
+    console.log(username, password);
     const hashedPassword = await bcrypt.hash(password, 10);
+    console.log(hashedPassword);
     const user = await User.create({ username, password: hashedPassword });
     res.status(201).json(user);
   } catch (error) {
