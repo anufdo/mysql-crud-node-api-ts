@@ -20,4 +20,8 @@ app.get("/name", async (req: Request, res: Response): Promise<Response> => {
   return res.send("hi");
 });
 
+app.get("/api/name", async (req: Request, res: Response): Promise<Response> => {
+  return res.send("hi hello");
+});
+
 export default app;

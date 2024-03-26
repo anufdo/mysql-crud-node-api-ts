@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "start-node": "node build/index.js",
+    "dev": "ts-node-dev src/index.ts",
     "test": "yarn jest test --silent",
     "build": "tsc -p .",
     "tsc": "tsc -p . --pretty --skipLibCheck --noEmit",
