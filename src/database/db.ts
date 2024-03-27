@@ -1,10 +1,16 @@
-import { Sequelize, Model, DataTypes } from "sequelize";
+import { Sequelize } from "sequelize-typescript";
 import { appEnv } from "../config/env";
+import { Dialect } from "sequelize";
+import { User } from "../models/User";
 
-// Replace with your actual database connection details
-const sequelize = new Sequelize(appEnv.database.DB_NAME, appEnv.database.DB_USER, appEnv.database.DB_PASSWORD, {
+const sequelize = new Sequelize({
+  database: appEnv.database.DB_NAME,
   host: appEnv.database.DB_HOST,
-  dialect: "mysql",
+  username: appEnv.database.DB_USER,
+  password: appEnv.database.DB_PASSWORD,
+  dialect: appEnv.database.DB_DIALECT as Dialect,
+
+  models: [User],
 });
 
 export default sequelize;
