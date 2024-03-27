@@ -12,5 +12,6 @@ export const appEnv = {
     DB_USER: process.env.DB_USER ?? "root",
     DB_PASSWORD: process.env.DB_PASSWORD ?? "password",
     DB_NAME: process.env.DB_NAME ?? "crud_node_api_ts",
+    DB_DIALECT: process.env.DB_DIALECT ?? "mysql",
   },
 };

@@ -3,9 +3,10 @@
 import express, { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import User from "../models/User";
+import { User } from "../models/User";
+import _ from "lodash";
 
-// Assuming your User model is exported as User from the models directory
+// Assuming your User model is exported as User from the modes directory
 
 const router = express.Router();
 const JWT_SECRET = "your_secret_key"; // Change this to a secure secret key
@@ -20,8 +21,9 @@ router.post("/register", async (req: Request, res: Response) => {
     console.log(username, password);
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log(hashedPassword);
+
     const user = await User.create({ username, password: hashedPassword });
-    res.status(201).json(user);
+    res.status(201).json(_.pick(user, ["id", "username"]));
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
