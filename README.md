@@ -1,6 +1,6 @@
-# CRUD Node API with TypeScript
+# Mysql CRUD Node API with TypeScript 
 
-This is a simple boilerplate for creating crud node.js API with TypeScript.
+This is a simple boilerplate for creating mysql crud node.js API with TypeScript.
 
 ## Note
 
